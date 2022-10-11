@@ -1,0 +1,29 @@
+defaults:
+  - _self_
+  - slurm/local
+  - override hydra/launcher: submitit_slurm
+  - override hydra/job_logging: colorlog
+  - override hydra/hydra_logging: colorlog
+
+
+env_id: BipedalWalker-v3
+model_fn: trained_agent.zip
+log_dir: logs
+total_timesteps: 500000
+n_eval_episodes: 5
+verbose: 1
+
+gamma: 0.99
+learning_rate: 3e-4
+
+
+output_dir: logs/hydra
+hydra:
+  run:
+    dir: ${output_dir}/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  sweep:
+    dir: ${output_dir}/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  launcher:
+    setup:
+      - export XLA_PYTHON_CLIENT_PREALLOCATE=false
+      - export MUJOCO_GL=egl

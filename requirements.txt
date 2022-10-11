@@ -1,3 +1,5 @@
 stable-baselines3
 gym[box2d]==0.21.0
 jupyterlab
+tensorboard
+smac

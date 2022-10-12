@@ -7,3 +7,6 @@ hydra-core
 hydra-submitit-launcher
 hydra-colorlog
 rich
+matplotlib
+seaborn
+pandas

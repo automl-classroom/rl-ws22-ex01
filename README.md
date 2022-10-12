@@ -18,5 +18,10 @@ For training, activate your conda env and run the following in this dir:
 python train.py
 ```
 
+### Visualize Training Progress
+```bash
+tensorboard --logdir .
+```
+
 ## Replay
 See the notebook.

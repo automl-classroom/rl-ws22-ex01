@@ -12,6 +12,7 @@ log_dir: logs
 total_timesteps: 500000
 n_eval_episodes: 5
 verbose: 1
+seed: 1
 
 gamma: 0.99
 learning_rate: 3e-4

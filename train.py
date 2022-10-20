@@ -19,9 +19,10 @@ def main(cfg: DictConfig) -> float:
     total_timesteps = cfg.total_timesteps
     n_eval_episodes = cfg.n_eval_episodes
     verbose = cfg.verbose
+    seed = cfg.seed
 
     env = gym.make(env_id)
-    model = SAC("MlpPolicy", env, verbose=verbose, tensorboard_log=log_dir)
+    model = SAC("MlpPolicy", env, verbose=verbose, tensorboard_log=log_dir, seed=seed)
     model.learn(total_timesteps=total_timesteps)
     model.save(model_fn)
 
